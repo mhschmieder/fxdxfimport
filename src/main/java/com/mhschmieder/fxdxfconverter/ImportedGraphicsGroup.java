@@ -349,7 +349,7 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
         if ( hasImportedGraphics() ) {
             final double strokeWidthBasis = displayToVenueScaleFactor;
             _importedGraphics.updateStrokeWidth( _importedGraphicsDistanceUnit,
-                                                 _distanceUnit,
+                                                 distanceUnit,
                                                  strokeWidthBasis,
                                                  IMPORTED_GRAPHICS_STROKE_WIDTH_RATIO );
         }
