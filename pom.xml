@@ -10,7 +10,7 @@
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>FxConverterToolkit</name>
+	<name>fxdxfconverter</name>
 	<url>https://github.com/mhschmieder/fxdxfconverter</url>
 	<description>A toolkit for converting JavaFX based DXF entities to Scene Graph Groups and Nodes.</description>
 
