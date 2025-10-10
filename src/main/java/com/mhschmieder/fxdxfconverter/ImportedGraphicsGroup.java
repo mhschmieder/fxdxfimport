@@ -34,7 +34,6 @@ import com.mhschmieder.fxcharttoolkit.ChartContentGroup;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
-
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.paint.Color;
