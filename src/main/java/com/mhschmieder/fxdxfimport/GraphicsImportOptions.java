@@ -31,7 +31,7 @@
 package com.mhschmieder.fxdxfimport;
 
 import com.mhschmieder.fxcadgraphics.DrawingLimits;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
+import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.geometry.Bounds;
 
 /**
