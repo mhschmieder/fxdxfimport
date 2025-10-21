@@ -21,14 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxDxfConverter Library
+ * This file is part of the FxDxfImport Library
  *
  * You should have received a copy of the MIT License along with the 
- * FxDxfConverter Library. If not, see <https://opensource.org/licenses/MIT>.
+ * FxDxfImport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxdxfconverter
+ * Project: https://github.com/mhschmieder/fxdxfimport
  */
-package com.mhschmieder.fxdxfconverter;
+package com.mhschmieder.fxdxfimport;
 
 import com.mhschmieder.fxchart.ChartContentGroup;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;

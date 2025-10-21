@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,20 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxDxfConverter Library
+ * This file is part of the FxDxfImport Library
  *
  * You should have received a copy of the MIT License along with the
- * FxDxfConverter Library. If not, see <https://opensource.org/licenses/MIT>.
+ * FxDxfImport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxdxfconverter
+ * Project: https://github.com/mhschmieder/fxdxfimport
  */
 /**
- * This package contains the FxDxfConverter Library's export protocols (via
- * basic and advanced export interfaces), and utilities for wrapping output
- * writers with DXF as the targeted device.
+ * This package contains the FxDxfImport Library's export protocols (via basic
+ * and advanced export interfaces), and utilities for wrapping output writers
+ * with DXF as the targeted device.
  *
  * @version 1.0
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.fxdxfconverter;
+package com.mhschmieder.fxdxfimport;
