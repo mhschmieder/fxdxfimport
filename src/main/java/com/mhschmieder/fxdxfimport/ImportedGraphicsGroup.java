@@ -31,8 +31,8 @@
 package com.mhschmieder.fxdxfimport;
 
 import com.mhschmieder.fxchart.ChartContentGroup;
-import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
-import com.mhschmieder.fxguitoolkit.GuiUtilities;
+import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxgraphics.paint.ColorUtilities;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;

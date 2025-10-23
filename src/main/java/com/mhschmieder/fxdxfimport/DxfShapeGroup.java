@@ -31,8 +31,8 @@
 package com.mhschmieder.fxdxfimport;
 
 import com.mhschmieder.fxdxfparser.geometry.DxfShapeContainer;
-import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
-import com.mhschmieder.fxgraphicstoolkit.shape.ShapeContainer;
+import com.mhschmieder.fxgraphics.paint.ColorUtilities;
+import com.mhschmieder.fxgraphics.shape.ShapeContainer;
 import com.mhschmieder.jphysics.DistanceUnit;
 import com.mhschmieder.jphysics.UnitConversion;
 import javafx.collections.ObservableList;
