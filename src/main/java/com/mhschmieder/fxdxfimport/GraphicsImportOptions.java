@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxdxfimport;
 
-import com.mhschmieder.fxcadgraphics.DrawingLimits;
+import com.mhschmieder.fxcadcontrols.model.DrawingLimitsProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.geometry.Bounds;
 
@@ -54,13 +54,13 @@ public final class GraphicsImportOptions {
     private boolean                   _initialDistanceUnitFromGraphicsFile;
 
     // Keep track of the Prospective Drawing Limits for the Geometry Import.
-    private DrawingLimits             _prospectiveDrawingLimits;
+    private DrawingLimitsProperties _prospectiveDrawingLimitsProperties;
 
     /*
      * Default constructor when nothing is known. 
      */
     public GraphicsImportOptions() {
-        this( DISTANCE_UNIT_DEFAULT, new DrawingLimits() );
+        this( DISTANCE_UNIT_DEFAULT, new DrawingLimitsProperties() );
     }
 
     /*
@@ -79,35 +79,37 @@ public final class GraphicsImportOptions {
 
         // NOTE: Unfortunately, there is no constructor that accepts min/max
         // pairs, and no setter methods to call post-construction.
-        _prospectiveDrawingLimits = new DrawingLimits( pX, pY, pWidth, pHeight );
+        _prospectiveDrawingLimitsProperties = new DrawingLimitsProperties( pX, pY, pWidth, pHeight );
     }
 
     /*
      * Fully specified constructor when everything is known. 
      */
-    public GraphicsImportOptions( final DistanceUnit pDistanceUnit,
-                                  final DrawingLimits pProspectiveDrawingLimits ) {
+    public GraphicsImportOptions(
+            final DistanceUnit pDistanceUnit,
+            final DrawingLimitsProperties pProspectiveDrawingLimitsProperties) {
         this( pDistanceUnit,
-              pProspectiveDrawingLimits.getX(),
-              pProspectiveDrawingLimits.getY(),
-              pProspectiveDrawingLimits.getWidth(),
-              pProspectiveDrawingLimits.getHeight() );
+              pProspectiveDrawingLimitsProperties.getX(),
+              pProspectiveDrawingLimitsProperties.getY(),
+              pProspectiveDrawingLimitsProperties.getWidth(),
+              pProspectiveDrawingLimitsProperties.getHeight() );
     }
 
     /*
      * Copy constructor. 
      */
-    public GraphicsImportOptions( final GraphicsImportOptions pGraphicsExportOptions ) {
+    public GraphicsImportOptions(
+            final GraphicsImportOptions pGraphicsExportOptions ) {
         this( pGraphicsExportOptions.getDistanceUnit(),
-              pGraphicsExportOptions.getProspectiveDrawingLimits() );
+              pGraphicsExportOptions.getProspectiveDrawingLimitsProperties() );
     }
 
     public DistanceUnit getDistanceUnit() {
         return _distanceUnit;
     }
 
-    public DrawingLimits getProspectiveDrawingLimits() {
-        return _prospectiveDrawingLimits;
+    public DrawingLimitsProperties getProspectiveDrawingLimitsProperties() {
+        return _prospectiveDrawingLimitsProperties;
     }
 
     public boolean isInitialDistanceUnitFromGraphicsFile() {
@@ -119,7 +121,7 @@ public final class GraphicsImportOptions {
         _distanceUnit = DISTANCE_UNIT_DEFAULT;
         _initialDistanceUnitFromGraphicsFile = true;
 
-        _prospectiveDrawingLimits = new DrawingLimits();
+        _prospectiveDrawingLimitsProperties = new DrawingLimitsProperties();
     }
 
     public void setDistanceUnit( final DistanceUnit pDistanceUnit ) {
@@ -127,22 +129,25 @@ public final class GraphicsImportOptions {
     }
 
     // Fully specified pseudo-constructor.
-    public void setGraphicsImportOptions( final DistanceUnit pDistanceUnit,
-                                          final boolean pInitialDistanceUnitFromGraphicsFile,
-                                          final DrawingLimits pProspectiveDrawingLimits ) {
+    public void setGraphicsImportOptions(
+            final DistanceUnit pDistanceUnit,
+            final boolean pInitialDistanceUnitFromGraphicsFile,
+            final DrawingLimitsProperties pProspectiveDrawingLimitsProperties) {
         setDistanceUnit( pDistanceUnit );
         setInitialDistanceUnitFromGraphicsFile( pInitialDistanceUnitFromGraphicsFile );
-        setProspectiveDrawingLimits( pProspectiveDrawingLimits );
+        setProspectiveDrawingLimits(pProspectiveDrawingLimitsProperties);
     }
 
     // Pseudo-copy constructor.
-    public void setGraphicsImportOptions( final GraphicsImportOptions pGraphicsExportOptions ) {
+    public void setGraphicsImportOptions(
+            final GraphicsImportOptions pGraphicsExportOptions ) {
         setGraphicsImportOptions( pGraphicsExportOptions.getDistanceUnit(),
                                   pGraphicsExportOptions.isInitialDistanceUnitFromGraphicsFile(),
-                                  pGraphicsExportOptions.getProspectiveDrawingLimits() );
+                                  pGraphicsExportOptions.getProspectiveDrawingLimitsProperties() );
     }
 
-    public void setInitialDistanceUnitFromGraphicsFile( final boolean pInitialDistanceUnitFromGraphicsFile ) {
+    public void setInitialDistanceUnitFromGraphicsFile(
+            final boolean pInitialDistanceUnitFromGraphicsFile ) {
         _initialDistanceUnitFromGraphicsFile = pInitialDistanceUnitFromGraphicsFile;
     }
 
@@ -154,11 +159,13 @@ public final class GraphicsImportOptions {
      * NOTE: We make a copy, so that reference-switching via user choice
      * doesn't cause confusion -- especially if we convert units more than once.
      */
-    public void setProspectiveDrawingLimits( final DrawingLimits pProspectiveDrawingLimits ) {
-        _prospectiveDrawingLimits = new DrawingLimits( pProspectiveDrawingLimits.getX(),
-                                                       pProspectiveDrawingLimits.getY(),
-                                                       pProspectiveDrawingLimits.getWidth(),
-                                                       pProspectiveDrawingLimits.getHeight() );
+    public void setProspectiveDrawingLimits(
+            final DrawingLimitsProperties pProspectiveDrawingLimitsProperties) {
+        _prospectiveDrawingLimitsProperties = new DrawingLimitsProperties(
+                pProspectiveDrawingLimitsProperties.getX(),
+                pProspectiveDrawingLimitsProperties.getY(),
+                pProspectiveDrawingLimitsProperties.getWidth(),
+                pProspectiveDrawingLimitsProperties.getHeight() );
     }
 
     /**
@@ -169,14 +176,17 @@ public final class GraphicsImportOptions {
      *            The overall container for the entire group of imported
      *            geometry, including explicit bounds when present in the file
      */
-    public void updateGraphicsImportOptions( final DxfShapeGroup geometryContainer ) {
+    public void updateGraphicsImportOptions(
+            final DxfShapeGroup geometryContainer ) {
         // Start with the initial Distance Unit choice -- from the Graphics File
         // if present, or "unitless" if unspecified or unsupported.
         _distanceUnit = geometryContainer.getDistanceUnit();
-        _initialDistanceUnitFromGraphicsFile = !DistanceUnit.UNITLESS.equals( _distanceUnit );
+        _initialDistanceUnitFromGraphicsFile = !DistanceUnit.UNITLESS.equals(
+                _distanceUnit );
 
         // Cache the Computed Bounds, as the likely best prospective limits.
         final Bounds computedBounds = geometryContainer.getBoundsInLocal();
-        _prospectiveDrawingLimits = new DrawingLimits( computedBounds );
+        _prospectiveDrawingLimitsProperties = new DrawingLimitsProperties(
+                computedBounds );
     }
 }

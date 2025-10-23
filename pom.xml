@@ -54,12 +54,6 @@
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>fxcadgraphics</artifactId>
-            <version>0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.mhschmieder</groupId>
             <artifactId>fxcontrols</artifactId>
             <version>0.1-SNAPSHOT</version>
             <scope>compile</scope>
