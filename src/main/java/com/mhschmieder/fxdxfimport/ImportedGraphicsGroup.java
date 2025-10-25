@@ -31,8 +31,8 @@
 package com.mhschmieder.fxdxfimport;
 
 import com.mhschmieder.fxchart.ChartContentGroup;
-import com.mhschmieder.fxcontrols.GuiUtilities;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
+import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -206,7 +206,7 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
     /**
      * Set up the configuration of the Imported Graphics.
      */
-    private final void initialize() {
+    private void initialize() {
         // Initialize the persistent shared attributes of the Imported Graphics
         // Group, which is application managed and is not directly interactive
         // at this time.
