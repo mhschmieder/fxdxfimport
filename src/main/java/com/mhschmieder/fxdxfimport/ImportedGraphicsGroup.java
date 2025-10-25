@@ -137,7 +137,7 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
         // of nodes, the caching is disengaged by the JavaFX core engine,
         // returning to sharp rendering. It's a performance vs. quality hint.
         // TODO: Make this a user preference, or only set the cache hint when
-        // the node count for the geometry group exceeds 30,000 or even 20,000?
+        //  the node count for the geometry group exceeds 30,000 or even 20,000?
         // NOTE: We now make this dependent on the actual overall node count.
         final int numberOfNodes = importedGraphics.getChildren().size();
         final boolean optimizeGraphicsPerformance = numberOfNodes > 20000;
@@ -158,12 +158,14 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
         // Bidirectionally bind the Opacity property to this Group Node.
         // NOTE: This is OK because we embed unit conversion in DoubleEditor.
         // NOTE: We now use a listener instead, as the data model uses the
-        // displayed percentage instead of a real number representing a
-        // percentage, so we have to multiply by 1/100.
-        // opacityProperty().bindBidirectional(
+        //  displayed percentage instead of a real number representing a
+        //  percentage, so we have to multiply by 1/100.
+        //opacityProperty().bindBidirectional(
         // importedGraphicsOpacityPercentProperty() );
         importedGraphicsOpacityPercentProperty()
-                .addListener( ( observableValue, oldValue, newValue ) -> {
+                .addListener( ( observableValue,
+                                oldValue,
+                                newValue ) -> {
                     final double opacityPercentValue = 0.01d * newValue.doubleValue();
                     setOpacity( opacityPercentValue );
                 } );
