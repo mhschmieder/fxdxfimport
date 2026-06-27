@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxDxfImport Library
+ * This file is part of the fxdxfimport Library
  *
- * You should have received a copy of the MIT License along with the
- * FxDxfImport Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the fxdxfimport
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxdxfimport
  */
@@ -44,7 +44,8 @@ import javafx.geometry.Bounds;
 public final class GraphicsImportOptions {
 
     // We generally remain unitless until units are explicitly chosen.
-    private static final DistanceUnit DISTANCE_UNIT_DEFAULT = DistanceUnit.UNITLESS;
+    private static final DistanceUnit DISTANCE_UNIT_DEFAULT
+            = DistanceUnit.UNITLESS;
 
     // Keep track of the Distance Unit for the Graphics Import.
     private DistanceUnit              _distanceUnit;

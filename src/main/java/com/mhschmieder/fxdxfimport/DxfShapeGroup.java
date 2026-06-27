@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxDxfImport Library
+ * This file is part of the fxdxfimport Library
  *
- * You should have received a copy of the MIT License along with the
- * FxDxfImport Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the fxdxfimport
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxdxfimport
  */
@@ -46,7 +46,8 @@ import javafx.scene.transform.Transform;
  * This class is a graphical node container for a collection of bounded geometry
  * represented as a group of generated shapes -- usually from a Graphics Import.
  */
-public final class DxfShapeGroup extends DxfShapeContainer implements ShapeContainer {
+public final class DxfShapeGroup extends DxfShapeContainer
+        implements ShapeContainer {
 
     /** Distance Unit, used as the Model Space's Unit of Measurement. */
     private DistanceUnit _distanceUnit;
@@ -123,8 +124,8 @@ public final class DxfShapeGroup extends DxfShapeContainer implements ShapeConta
         // using the supplied Foreground Color, but only change Black and White
         // vs. other Colors so that we don't mess up custom cues.
         // NOTE: The implementation below is brittle as it assumes too much
-        // knowledge of various derived class structures and also that there is
-        // stability to those classes. So this is really a placeholder for now.
+        //  knowledge of various derived class structures and also that there is
+        //  stability to those classes. So this is really a placeholder for now.
         getChildren().forEach( childNode -> {
             if ( childNode instanceof Shape ) {
                 // Only Shapes can set Stroke (used as Foreground Color).
