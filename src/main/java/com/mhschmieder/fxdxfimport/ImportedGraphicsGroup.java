@@ -21,18 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxDxfImport Library
+ * This file is part of the fxdxfimport Library
  *
- * You should have received a copy of the MIT License along with the 
- * FxDxfImport Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the fxdxfimport
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxdxfimport
  */
 package com.mhschmieder.fxdxfimport;
 
-import com.mhschmieder.fxchart.ChartContentGroup;
+import com.mhschmieder.fxgraphics.group.ChartContentGroup;
+import com.mhschmieder.fxgraphics.group.GroupUtilities;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
-import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.jphysics.measure.DistanceUnit;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -212,7 +212,7 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
         // Initialize the persistent shared attributes of the Imported Graphics
         // Group, which is application managed and is not directly interactive
         // at this time.
-        GuiUtilities.initDecoratorNodeGroup( this );
+        GroupUtilities.initDecoratorNodeGroup( this );
 
         // It is desired to have Imported Graphics be less opaque than native
         // application graphics, so that it is easier to tell them apart.

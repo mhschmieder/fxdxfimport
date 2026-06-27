@@ -44,33 +44,29 @@
         <dependency>
             <groupId>com.mhschmieder</groupId>
             <artifactId>jphysics</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
             <artifactId>fxgraphics</artifactId>
-            <version>0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
             <artifactId>fxcontrols</artifactId>
-            <version>0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
             <artifactId>fxdxfparser</artifactId>
-            <version>0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.mhschmieder</groupId>
-            <artifactId>fxchart</artifactId>
-            <version>0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.mhschmieder</groupId>
+			<artifactId>fxgraphics</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
