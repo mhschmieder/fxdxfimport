@@ -50,33 +50,33 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      * computed ratio and in case we provide programmatic support for changing
      * its value (this then gives us our defined default value).
      */
-    private static final double   BACKGROUND_OPACITY_DEFAULT           = 0.75d;
+    private static final double BACKGROUND_OPACITY_DEFAULT = 0.75d;
 
     /**
      * Declare a flag to indicate whether imported geometry is active or not.
      */
-    private boolean               _importedGraphicsActive;
+    private boolean _importedGraphicsActive;
 
     /**
      * Imported Graphics container that is neither draggable nor clickable.
      */
-    private DxfShapeGroup         _importedGraphics;
+    private DxfShapeGroup _importedGraphics;
 
     /**
      * Distance Unit for the Graphics Import content source.
      */
-    private DistanceUnit          _importedGraphicsDistanceUnit;
+    private DistanceUnit _importedGraphicsDistanceUnit;
 
     /**
      * Flag for whether to show the Imported Graphics or not.
      */
-    private boolean               _showImportedGraphics;
+    private boolean _showImportedGraphics;
 
     /**
      * Keep a local copy of the global Imported Graphics Opacity Percent
      * property, for data binding.
      */
-    private DoubleProperty        importedGraphicsOpacityPercent;
+    private DoubleProperty importedGraphicsOpacityPercent;
 
     /**
      * This is the full constructor, when all parameters are known.
@@ -115,10 +115,11 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      *            The background color to use for determining the foreground
      *            color
      */
-    public final void addImportedGraphics( final DxfShapeGroup importedGraphics,
-                                           final DistanceUnit importedGraphicsDistanceUnit,
-                                           final double displayToVenueScaleFactor,
-                                           final Color backColor ) {
+    public final void addImportedGraphics(
+            final DxfShapeGroup importedGraphics,
+            final DistanceUnit importedGraphicsDistanceUnit,
+            final double displayToVenueScaleFactor,
+            final Color backColor ) {
         // Cache the original Distance Unit associated with the Graphics Import
         // content source, so we can re-scale as necessary when the
         // application's Distance Unit changes.
@@ -130,12 +131,12 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
         importedGraphics.setForeground( foreColor, false );
 
         // NOTE: This is just a hint, and rarely kicks in, so is low-risk in
-        // terms of pixelated rendering for most imported geometry sets. In the
-        // cases where it does cause a bitmap cache, it prevents crashes and
-        // freeze-ups during zooming and other scaling-based changes to the
-        // overall geometry group. Once zoomed in to where there is less overlap
-        // of nodes, the caching is disengaged by the JavaFX core engine,
-        // returning to sharp rendering. It's a performance vs. quality hint.
+        //  terms of pixelated rendering for most imported geometry sets. In the
+        //  cases where it does cause a bitmap cache, it prevents crashes and
+        //  freeze-ups during zooming and other scaling-based changes to the
+        //  overall geometry group. Once zoomed in to where there is less
+        //  overlap of nodes, the caching is disengaged by the JavaFX engine,
+        //  returning to sharp rendering. It's a performance vs. quality hint.
         // TODO: Make this a user preference, or only set the cache hint when
         //  the node count for the geometry group exceeds 30,000 or even 20,000?
         // NOTE: We now make this dependent on the actual overall node count.
@@ -166,7 +167,8 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
                 .addListener( ( observableValue,
                                 oldValue,
                                 newValue ) -> {
-                    final double opacityPercentValue = 0.01d * newValue.doubleValue();
+                    final double opacityPercentValue
+                            = 0.01d * newValue.doubleValue();
                     setOpacity( opacityPercentValue );
                 } );
     }
@@ -247,7 +249,8 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      * @param displayToVenueScaleFactor
      *            The display-to-venue scale factor
      */
-    public final void scaleImportedGraphics( final double displayToVenueScaleFactor ) {
+    public final void scaleImportedGraphics(
+            final double displayToVenueScaleFactor ) {
         // Scale from user-selected Distance Unit in the Graphics Import content
         // source to current Distance Unit, including Stroke Width resolution.
         if ( hasImportedGraphics() ) {
@@ -273,20 +276,23 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      * @param importedGraphicsActive
      *            Flag for whether Imported Graphics are active or not
      */
-    public final void setImportedGraphicsActive( final boolean importedGraphicsActive ) {
+    public final void setImportedGraphicsActive(
+            final boolean importedGraphicsActive ) {
         _importedGraphicsActive = importedGraphicsActive;
     }
 
     // Set and bind the Opacity Percent property reference.
     // NOTE: This should be done only once, to avoid breaking bindings.
-    public final void setImportedGraphicsOpacityPercentProperty( final DoubleProperty pImportedGraphicsOpacityPercent ) {
+    public final void setImportedGraphicsOpacityPercentProperty(
+            final DoubleProperty pImportedGraphicsOpacityPercent ) {
         // Cache the Imported Graphics Opacity Percent property reference.
         importedGraphicsOpacityPercent = pImportedGraphicsOpacityPercent;
 
         // Bring the Group Node Opacity up-to-date before binding it.
         // NOTE: The data model uses the displayed percentage instead of a real
         // number representing a percentage, so we have to multiply by 1/100.
-        final double opacityPercentValue = 0.01d * pImportedGraphicsOpacityPercent.get();
+        final double opacityPercentValue
+                = 0.01d * pImportedGraphicsOpacityPercent.get();
         setOpacity( opacityPercentValue );
 
         // Bind the data model to the appropriate level of the Group.
@@ -299,7 +305,8 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      * @param showImportedGraphics
      *            If true, the Imported Graphics are drawn.
      */
-    public final void setShowImportedGraphics( final boolean showImportedGraphics ) {
+    public final void setShowImportedGraphics(
+            final boolean showImportedGraphics ) {
         _showImportedGraphics = showImportedGraphics;
 
         // Update the visibility of the Imported Graphics, if present.
@@ -322,10 +329,11 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      *            The background color to use for determining the foreground
      *            color
      */
-    public final void updateImportedGraphics( final DxfShapeGroup importedGraphics,
-                                              final DistanceUnit importedGraphicsDistanceUnit,
-                                              final double displayToVenueScaleFactor,
-                                              final Color backColor ) {
+    public final void updateImportedGraphics(
+            final DxfShapeGroup importedGraphics,
+            final DistanceUnit importedGraphicsDistanceUnit,
+            final double displayToVenueScaleFactor,
+            final Color backColor ) {
         // Remove the previous Imported Graphics from the container.
         clearImportedGraphics();
 
@@ -345,14 +353,15 @@ public class ImportedGraphicsGroup extends ChartContentGroup {
      * @param displayToVenueScaleFactor
      *            The display-to-venue scale factor
      */
-    public final void updateImportedGraphicsStrokeWidths( final double displayToVenueScaleFactor ) {
+    public final void updateImportedGraphicsStrokeWidths(
+            final double displayToVenueScaleFactor ) {
         // Modify Stroke Width resolution to be appropriate for the new scale.
         if ( hasImportedGraphics() ) {
-            final double strokeWidthBasis = displayToVenueScaleFactor;
-            _importedGraphics.updateStrokeWidth( _importedGraphicsDistanceUnit,
-                                                 distanceUnit,
-                                                 strokeWidthBasis,
-                                                 IMPORTED_GRAPHICS_STROKE_WIDTH_RATIO );
+            _importedGraphics.updateStrokeWidth(
+                    _importedGraphicsDistanceUnit,
+                    distanceUnit,
+                    displayToVenueScaleFactor,
+                    IMPORTED_GRAPHICS_STROKE_WIDTH_RATIO );
         }
     }
 }
