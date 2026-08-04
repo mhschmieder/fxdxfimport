@@ -1,73 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<artifactId>jxlab</artifactId>
-		<groupId>com.mhschmieder</groupId>
-		<version>1.0.0</version>
-	</parent>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jxlab</artifactId>
+        <groupId>com.mhschmieder</groupId>
+        <version>1.0.0</version>
+    </parent>
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>fxdxfimport</artifactId>
-	<version>1.0.0</version>
-	<packaging>jar</packaging>
+    <artifactId>fxdxfimport</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
-	<name>fxdxfimport</name>
-	<url>https://github.com/mhschmieder/fxdxfimport</url>
-	<description>A toolkit for converting JavaFX based DXF entities to Scene Graph Groups and Nodes.</description>
+    <name>fxdxfimport</name>
+    <url>https://github.com/mhschmieder/fxdxfimport</url>
+    <description>A toolkit for converting JavaFX based DXF entities to Scene
+        Graph Groups and Nodes.
+    </description>
 
-	<licenses>
-		<license>
-			<name>MIT License</name>
-			<url>https://opensource.org/licenses/MIT</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<scm>
-		<url>https://github.com/mhschmieder/fxdxfimport</url>
-		<connection>scm:git:git://github.com/mhschmieder/fxdxfimport.git</connection>
-		<developerConnection>scm:git:git@github.com:mhschmieder/fxdxfimport.git</developerConnection>
-	</scm>
+    <scm>
+        <url>https://github.com/mhschmieder/fxdxfimport</url>
+        <connection>scm:git:git://github.com/mhschmieder/fxdxfimport.git
+        </connection>
+        <developerConnection>
+            scm:git:git@github.com:mhschmieder/fxdxfimport.git
+        </developerConnection>
+    </scm>
 
-	<developers>
-		<developer>
-			<email>markhschmieder@gmail.com</email>
-			<name>Mark Schmieder</name>
-			<url>https://github.com/mhschmieder</url>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <email>markhschmieder@gmail.com</email>
+            <name>Mark Schmieder</name>
+            <url>https://github.com/mhschmieder</url>
+        </developer>
+    </developers>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.mhschmieder</groupId>
-			<artifactId>fxdxfparser</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mhschmieder</groupId>
-			<artifactId>fxgraphics</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-base</artifactId>
-			<version>25.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-graphics</artifactId>
-			<version>25.0.1</version>
-		</dependency>
-		<dependency>
+    <dependencies>
+        <dependency>
+            <groupId>com.mhschmieder</groupId>
+            <artifactId>fxdxfparser</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mhschmieder</groupId>
+            <artifactId>fxgraphics</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>25.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>25.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>com.mhschmieder</groupId>
             <artifactId>jphysics</artifactId>
             <version>1.0.1</version>
         </dependency>
-	</dependencies>
+    </dependencies>
 
 </project>

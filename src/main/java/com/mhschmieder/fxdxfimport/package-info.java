@@ -32,9 +32,5 @@
  * This package contains the fxdxfimport Library's export protocols (via basic
  * and advanced export interfaces), and utilities for wrapping output writers
  * with DXF as the targeted device.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
  */
 package com.mhschmieder.fxdxfimport;
