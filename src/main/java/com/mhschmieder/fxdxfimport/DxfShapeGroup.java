@@ -115,8 +115,6 @@ public final class DxfShapeGroup extends DxfShapeContainer
         transforms.setAll( scaleTransform );
     }
 
-
-
     /**
      * This methods conditionally sets a new foreground color for the graphics.
      *
