@@ -33,8 +33,8 @@ package com.mhschmieder.fxdxfimport;
 import com.mhschmieder.fxdxfparser.geometry.DxfShapeContainer;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
 import com.mhschmieder.fxgraphics.shape.ShapeContainer;
+import com.mhschmieder.jphysics.measure.DistanceConversion;
 import com.mhschmieder.jphysics.measure.DistanceUnit;
-import com.mhschmieder.jphysics.measure.UnitConversion;
 
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
@@ -106,9 +106,9 @@ public final class DxfShapeGroup extends DxfShapeContainer
         // TODO: Verify it is safe to remove existing Transforms, but if we
         // don't, then we get no results if converting old to new and get
         // cumulative scaling if using Meters as the Distance Unit basis.
-        final double distanceScaleFactor = UnitConversion.convertDistance( 1.0d,
-                                                                           distanceUnitOld,
-                                                                           distanceUnitNew );
+        final double distanceScaleFactor = DistanceConversion.convertDistance( 1.0d,
+                                                                               distanceUnitOld,
+                                                                               distanceUnitNew );
         final ObservableList< Transform > transforms = getShapeTransforms();
         final Scale scaleTransform = Transform.scale( distanceScaleFactor,
                                                       distanceScaleFactor );
@@ -178,7 +178,7 @@ public final class DxfShapeGroup extends DxfShapeContainer
         // Modify Stroke Width resolution to be appropriate for the new scale.
         // NOTE: If default basis is used, no need to scale to Distance Unit,
         // but the zoom factor can then cause overly thick strokes.
-        final double strokeWidthReference = UnitConversion.convertDistance(
+        final double strokeWidthReference = DistanceConversion.convertDistance(
                 strokeWidthBasis,
                 distanceUnitCurrent,
                 distanceUnitReference );
